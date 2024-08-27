@@ -108,6 +108,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       children: [
                         Column(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -195,8 +196,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 25.0, 20.0, 0.0),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  if (_model.formKey.currentState == null ||
+                                      !_model.formKey.currentState!
+                                          .validate()) {
+                                    return;
+                                  }
                                 },
                                 text: 'Login',
                                 options: FFButtonOptions(
