@@ -42,9 +42,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFFFBFBFB),
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: const Color(0xFFFBFBFB),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -83,6 +83,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
             width: double.infinity,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(0.0),
+                bottomRight: Radius.circular(0.0),
+                topLeft: Radius.circular(15.0),
+                topRight: Radius.circular(15.0),
+              ),
             ),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
@@ -135,6 +141,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               final selectedMedia =
                                   await selectMediaWithSourceBottomSheet(
                                 context: context,
+                                imageQuality: 100,
                                 allowPhoto: true,
                                 pickerFontFamily: 'Inter',
                               );
@@ -226,12 +233,23 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           setState(() => _model.dropDownValue1 = val),
                       width: double.infinity,
                       height: 50.0,
+                      searchHintTextStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Inter',
+                                letterSpacing: 0.0,
+                              ),
+                      searchTextStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Inter',
+                                letterSpacing: 0.0,
+                              ),
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Inter',
                                 letterSpacing: 0.0,
                               ),
                       hintText: 'Country',
+                      searchHintText: 'Search for an country...',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: FlutterFlowTheme.of(context).secondaryText,
@@ -247,7 +265,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       hidesUnderline: true,
                       isOverButton: true,
-                      isSearchable: false,
+                      isSearchable: true,
                       isMultiSelect: false,
                     ),
                   ),
@@ -271,12 +289,23 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           setState(() => _model.dropDownValue2 = val),
                       width: double.infinity,
                       height: 50.0,
+                      searchHintTextStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Inter',
+                                letterSpacing: 0.0,
+                              ),
+                      searchTextStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Inter',
+                                letterSpacing: 0.0,
+                              ),
                       textStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Inter',
                                 letterSpacing: 0.0,
                               ),
                       hintText: 'Currency',
+                      searchHintText: 'Search for an currency...',
                       icon: Icon(
                         Icons.keyboard_arrow_down_rounded,
                         color: FlutterFlowTheme.of(context).secondaryText,
@@ -292,7 +321,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       hidesUnderline: true,
                       isOverButton: true,
-                      isSearchable: false,
+                      isSearchable: true,
                       isMultiSelect: false,
                     ),
                   ),
@@ -442,8 +471,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(20.0, 50.0, 20.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        context.pushNamed('HomeScreen');
                       },
                       text: 'Save',
                       options: FFButtonOptions(

@@ -50,6 +50,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'edit_profile',
           path: '/editProfile',
           builder: (context, params) => const EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'HomeScreen',
+          path: '/homeScreen',
+          builder: (context, params) => const HomeScreenWidget(),
+        ),
+        FFRoute(
+          name: 'exploreScreen',
+          path: '/exploreScreen',
+          builder: (context, params) => const ExploreScreenWidget(),
+        ),
+        FFRoute(
+          name: 'packagesScreen',
+          path: '/packagesScreen',
+          builder: (context, params) => const PackagesScreenWidget(),
+        ),
+        FFRoute(
+          name: 'itinerariesScreen',
+          path: '/itinerariesScreen',
+          builder: (context, params) => const ItinerariesScreenWidget(),
+        ),
+        FFRoute(
+          name: 'HomeScreenCopyCopy',
+          path: '/homeScreenCopyCopy',
+          builder: (context, params) => const HomeScreenCopyCopyWidget(),
+        ),
+        FFRoute(
+          name: 'searchResultScreen',
+          path: '/searchResultScreen',
+          builder: (context, params) => const SearchResultScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
