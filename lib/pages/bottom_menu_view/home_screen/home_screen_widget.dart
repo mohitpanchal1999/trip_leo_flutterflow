@@ -56,7 +56,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).appBgColor,
+        backgroundColor: Colors.white,//FlutterFlowTheme.of(context).appBgColor,
         body: SafeArea(
           top: true,
           child: Stack(
@@ -148,10 +148,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
                                 controller: _model.tabBarController,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 70.0),
+                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 70.0),
                                     child: ListView(
-                                      padding: EdgeInsets.zero,
+                                      padding:EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                                       scrollDirection: Axis.vertical,
                                       children: [
                                         Align(
@@ -1791,7 +1790,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 70.0),
                                     child: ListView(
-                                      padding: EdgeInsets.zero,
+                                      padding:EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                                       scrollDirection: Axis.vertical,
                                       children: [
                                         Align(

@@ -51,19 +51,19 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       visible: widget.hidden == false,
       child: Material(
         color: Colors.transparent,
-        elevation: 4.0,
+        elevation: 0.0,
         child: Container(
           width: double.infinity,
-          height: 80.0,
+          height: 78.0,
           decoration: const BoxDecoration(
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                blurRadius: 2.5,
+                blurRadius: 0.0,
                 color: Color(0x33000000),
                 offset: Offset(
                   0.0,
-                  2.0,
+                  -0.8,
                 ),
               )
             ],
