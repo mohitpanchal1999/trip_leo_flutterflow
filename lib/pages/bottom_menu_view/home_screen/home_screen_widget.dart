@@ -56,7 +56,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,//FlutterFlowTheme.of(context).appBgColor,
+        backgroundColor: FlutterFlowTheme.of(context).appBgColor,
         body: SafeArea(
           top: true,
           child: Stack(
