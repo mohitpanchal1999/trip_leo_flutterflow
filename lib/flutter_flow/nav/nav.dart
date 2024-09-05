@@ -72,14 +72,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ItinerariesScreenWidget(),
         ),
         FFRoute(
-          name: 'HomeScreenCopyCopy',
-          path: '/homeScreenCopyCopy',
-          builder: (context, params) => const HomeScreenCopyCopyWidget(),
-        ),
-        FFRoute(
           name: 'searchResultScreen',
           path: '/searchResultScreen',
-          builder: (context, params) => const SearchResultScreenWidget(),
+          builder: (context, params) => SearchResultScreenWidget(
+            appBarTitle: params.getParam(
+              'appBarTitle',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'google_app_view',
+          path: '/googleAppView',
+          builder: (context, params) => const GoogleAppViewWidget(),
+        ),
+        FFRoute(
+          name: 'travel_detail_screen',
+          path: '/travelDetailScreen',
+          builder: (context, params) => TravelDetailScreenWidget(
+            backgroundImage: params.getParam(
+              'backgroundImage',
+              ParamType.String,
+            ),
+            destName: params.getParam(
+              'destName',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'travel_detail_screenCopy',
+          path: '/travelDetailScreenCopy',
+          builder: (context, params) => TravelDetailScreenCopyWidget(
+            backgroundImage: params.getParam(
+              'backgroundImage',
+              ParamType.String,
+            ),
+            destName: params.getParam(
+              'destName',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

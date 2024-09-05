@@ -62,7 +62,7 @@ class _ItinerariesScreenWidgetState extends State<ItinerariesScreenWidget> {
                 alignment: const AlignmentDirectional(0.0, 1.0),
                 child: wrapWithModel(
                   model: _model.bottomNavigationBarModel,
-                  updateCallback: () => setState(() {}),
+                  updateCallback: () => safeSetState(() {}),
                   child: const BottomNavigationBarWidget(
                     selectedPageIndex: 4,
                     hidden: false,

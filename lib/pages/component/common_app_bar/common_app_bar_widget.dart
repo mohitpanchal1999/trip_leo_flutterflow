@@ -9,9 +9,11 @@ class CommonAppBarWidget extends StatefulWidget {
   const CommonAppBarWidget({
     super.key,
     bool? showBackArrow,
+    required this.appBarTitle,
   }) : showBackArrow = showBackArrow ?? false;
 
   final bool showBackArrow;
+  final String? appBarTitle;
 
   @override
   State<CommonAppBarWidget> createState() => _CommonAppBarWidgetState();
@@ -72,7 +74,10 @@ class _CommonAppBarWidgetState extends State<CommonAppBarWidget> {
               ),
               Expanded(
                 child: Text(
-                  'San Diego, California',
+                  valueOrDefault<String>(
+                    widget.appBarTitle,
+                    'San Diego, California',
+                  ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Sora',
                         fontSize: 18.0,

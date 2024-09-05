@@ -229,6 +229,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                           .validate()) {
                                     return;
                                   }
+
+                                  context.pushNamed(
+                                    'HomeScreen',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: 'Login',
                                 options: FFButtonOptions(

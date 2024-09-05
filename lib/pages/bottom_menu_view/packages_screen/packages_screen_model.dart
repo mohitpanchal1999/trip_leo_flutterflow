@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class PackagesScreenModel extends FlutterFlowModel<PackagesScreenWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for bottom_navigation_bar component.
   late BottomNavigationBarModel bottomNavigationBarModel;
 

@@ -148,7 +148,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               if (selectedMedia != null &&
                                   selectedMedia.every((m) => validateFileFormat(
                                       m.storagePath, context))) {
-                                setState(() => _model.isDataUploading = true);
+                                safeSetState(
+                                    () => _model.isDataUploading = true);
                                 var selectedUploadedFiles = <FFUploadedFile>[];
 
                                 try {
@@ -166,12 +167,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 }
                                 if (selectedUploadedFiles.length ==
                                     selectedMedia.length) {
-                                  setState(() {
+                                  safeSetState(() {
                                     _model.uploadedLocalFile =
                                         selectedUploadedFiles.first;
                                   });
                                 } else {
-                                  setState(() {});
+                                  safeSetState(() {});
                                   return;
                                 }
                               }
@@ -230,7 +231,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         'Croatia'
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue1 = val),
+                          safeSetState(() => _model.dropDownValue1 = val),
                       width: double.infinity,
                       height: 50.0,
                       searchHintTextStyle:
@@ -286,7 +287,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         'Swiss Franc'
                       ],
                       onChanged: (val) =>
-                          setState(() => _model.dropDownValue2 = val),
+                          safeSetState(() => _model.dropDownValue2 = val),
                       width: double.infinity,
                       height: 50.0,
                       searchHintTextStyle:
@@ -352,7 +353,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           ChipData('Couple'),
                           ChipData('Adventure')
                         ],
-                        onChanged: (val) => setState(
+                        onChanged: (val) => safeSetState(
                             () => _model.choiceChipsValue1 = val?.firstOrNull),
                         selectedChipStyle: ChipStyle(
                           backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -423,7 +424,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           ChipData('Nightlife'),
                           ChipData('Adventure')
                         ],
-                        onChanged: (val) => setState(
+                        onChanged: (val) => safeSetState(
                             () => _model.choiceChipsValue2 = val?.firstOrNull),
                         selectedChipStyle: ChipStyle(
                           backgroundColor: FlutterFlowTheme.of(context).primary,

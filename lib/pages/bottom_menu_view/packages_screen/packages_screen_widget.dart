@@ -61,7 +61,7 @@ class _PackagesScreenWidgetState extends State<PackagesScreenWidget> {
                 alignment: const AlignmentDirectional(0.0, 1.0),
                 child: wrapWithModel(
                   model: _model.bottomNavigationBarModel,
-                  updateCallback: () => setState(() {}),
+                  updateCallback: () => safeSetState(() {}),
                   child: const BottomNavigationBarWidget(
                     selectedPageIndex: 3,
                     hidden: false,

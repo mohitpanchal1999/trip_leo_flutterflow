@@ -12,7 +12,11 @@ export '/pages/bottom_menu_view/packages_screen/packages_screen_widget.dart'
     show PackagesScreenWidget;
 export '/pages/bottom_menu_view/itineraries_screen/itineraries_screen_widget.dart'
     show ItinerariesScreenWidget;
-export '/pages/bottom_menu_view/home_screen_copy_copy/home_screen_copy_copy_widget.dart'
-    show HomeScreenCopyCopyWidget;
 export '/pages/bottom_menu_view/search_result_screen/search_result_screen_widget.dart'
     show SearchResultScreenWidget;
+export '/pages/bottom_menu_view/google_app_view/google_app_view_widget.dart'
+    show GoogleAppViewWidget;
+export '/pages/bottom_menu_view/travel_detail_screen/travel_detail_screen_widget.dart'
+    show TravelDetailScreenWidget;
+export '/pages/bottom_menu_view/travel_detail_screen_copy/travel_detail_screen_copy_widget.dart'
+    show TravelDetailScreenCopyWidget;

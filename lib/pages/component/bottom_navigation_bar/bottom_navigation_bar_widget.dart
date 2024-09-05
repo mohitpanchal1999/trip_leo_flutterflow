@@ -54,7 +54,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
         elevation: 0.0,
         child: Container(
           width: double.infinity,
-          height: 78.0,
+          height: 80.0,
           decoration: const BoxDecoration(
             color: Colors.white,
             boxShadow: [
