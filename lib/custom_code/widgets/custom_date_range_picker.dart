@@ -12,6 +12,7 @@ import 'dart:math';
 // ignore_for_file: prefer_const_constructors
 
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 
@@ -54,7 +55,7 @@ class _CustomDateRangePickerState extends State<CustomDateRangePicker> {
     String formattedEndDate = formatter.format(values[1]!);
     FFAppState().startDate = formattedStartDate;
     FFAppState().endDate = formattedEndDate;
-    widget.updatePageUi!();
+    // widget.updatePageUi!();
 
     return '$formattedStartDate ${formattedEndDate == '' ? '' : 'to $formattedEndDate'}';
   }
@@ -75,6 +76,10 @@ class _CustomDateRangePickerState extends State<CustomDateRangePicker> {
       weekdayLabelTextStyle: const TextStyle(
         color: Color(0xFFFF3131),
         fontWeight: FontWeight.bold,
+      ),
+      disabledDayTextStyle: const TextStyle(
+        color: Colors.grey,
+        fontWeight: FontWeight.w400,
       ),
       controlsTextStyle: const TextStyle(
         color: Colors.black,
