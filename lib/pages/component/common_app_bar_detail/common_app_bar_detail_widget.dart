@@ -43,6 +43,7 @@ class _CommonAppBarDetailWidgetState extends State<CommonAppBarDetailWidget> {
         padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(
               Icons.arrow_back_ios,
@@ -111,13 +112,16 @@ class _CommonAppBarDetailWidgetState extends State<CommonAppBarDetailWidget> {
                 print('IconButton pressed ...');
               },
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(24.0),
-              child: Image.network(
-                'https://picsum.photos/seed/645/600',
-                width: 30.0,
-                height: 30.0,
-                fit: BoxFit.cover,
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(24.0),
+                child: Image.network(
+                  'https://picsum.photos/seed/645/600',
+                  width: 32.0,
+                  height: 32.0,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ],

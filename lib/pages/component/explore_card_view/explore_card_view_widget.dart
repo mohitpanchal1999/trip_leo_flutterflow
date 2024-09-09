@@ -56,7 +56,7 @@ class _ExploreCardViewWidgetState extends State<ExploreCardViewWidget> {
         highlightColor: Colors.transparent,
         onTap: () async {
           context.pushNamed(
-            'travel_detail_screenCopy',
+            'travel_detail_screen',
             queryParameters: {
               'backgroundImage': serializeParam(
                 widget.destImage,

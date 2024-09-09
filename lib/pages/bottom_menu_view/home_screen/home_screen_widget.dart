@@ -72,6 +72,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
                       child: const CommonAppBarWidget(
                         showBackArrow: false,
                         appBarTitle: 'San Diego, California',
+                        isHideProfile: true,
                       ),
                     ),
                   ),
@@ -83,7 +84,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
                         maxWidth: double.infinity,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(0.0),
@@ -91,7 +92,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
                           topRight: Radius.circular(25.0),
                         ),
                         border: Border.all(
-                          color: const Color(0xFFF1F4F8),
+                          color: FlutterFlowTheme.of(context).borderColor,
                           width: 2.0,
                         ),
                       ),
@@ -417,7 +418,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget>
                                             borderRadius: 0.0,
                                             margin:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 4.0, 16.0, 4.0),
+                                                    10.0, 4.0, 16.0, 4.0),
                                             isOverButton: true,
                                             isSearchable: true,
                                             isMultiSelect: false,

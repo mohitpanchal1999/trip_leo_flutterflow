@@ -56,6 +56,9 @@ abstract class FlutterFlowTheme {
 
   late Color textGrey;
   late Color appBgColor;
+  late Color bottomNavColor;
+  late Color borderColor;
+  late Color itenaryCardColor;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -134,7 +137,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color alternate = const Color(0xFFE3E7ED);
   late Color primaryText = const Color(0xFF14181B);
   late Color secondaryText = const Color(0xFF677681);
-  late Color primaryBackground = const Color(0xFFF1F4F8);
+  late Color primaryBackground = const Color(0xFFFFFFFF);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
   late Color accent1 = const Color(0x4CF83B46);
   late Color accent2 = const Color(0x4CFF6A73);
@@ -147,6 +150,9 @@ class LightModeTheme extends FlutterFlowTheme {
 
   late Color textGrey = const Color(0xFF9E9E9E);
   late Color appBgColor = const Color(0xFFF6F6F6);
+  late Color bottomNavColor = const Color(0xFFFFFFFF);
+  late Color borderColor = const Color(0xFFF1F4F8);
+  late Color itenaryCardColor = const Color(0xFFF9F9F9);
 }
 
 abstract class Typography {
@@ -318,8 +324,11 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFF83B46);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color textGrey = const Color(0xFF98CCFD);
+  late Color textGrey = const Color(0xFFD3D3D3);
   late Color appBgColor = const Color(0xFF293B5A);
+  late Color bottomNavColor = const Color(0xFF1A1F24);
+  late Color borderColor = const Color(0xFF1A1F24);
+  late Color itenaryCardColor = const Color(0xFF262D34);
 }
 
 extension TextStyleHelper on TextStyle {

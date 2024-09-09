@@ -31,4 +31,10 @@ class FFAppState extends ChangeNotifier {
   set endDate(String value) {
     _endDate = value;
   }
+
+  String _defaultAddress = '';
+  String get defaultAddress => _defaultAddress;
+  set defaultAddress(String value) {
+    _defaultAddress = value;
+  }
 }

@@ -7,22 +7,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/component/common_app_bar/common_app_bar_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
-import 'google_app_view_model.dart';
-export 'google_app_view_model.dart';
+import 'package:provider/provider.dart';
+import 'google_place_picker_view_model.dart';
+export 'google_place_picker_view_model.dart';
 
-class GoogleAppViewWidget extends StatefulWidget {
-  const GoogleAppViewWidget({super.key});
+class GooglePlacePickerViewWidget extends StatefulWidget {
+  const GooglePlacePickerViewWidget({super.key});
 
   @override
-  State<GoogleAppViewWidget> createState() => _GoogleAppViewWidgetState();
+  State<GooglePlacePickerViewWidget> createState() =>
+      _GooglePlacePickerViewWidgetState();
 }
 
-class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
-    with TickerProviderStateMixin {
-  late GoogleAppViewModel _model;
+class _GooglePlacePickerViewWidgetState
+    extends State<GooglePlacePickerViewWidget> with TickerProviderStateMixin {
+  late GooglePlacePickerViewModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   LatLng? currentUserLocationValue;
@@ -32,7 +35,13 @@ class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => GoogleAppViewModel());
+    _model = createModel(context, () => GooglePlacePickerViewModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      FFAppState().defaultAddress = _model.placePickerValue.address;
+      safeSetState(() {});
+    });
 
     getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
         .then((loc) => safeSetState(() => currentUserLocationValue = loc));
@@ -68,6 +77,7 @@ class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
     if (currentUserLocationValue == null) {
       return Container(
         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -417,6 +427,11 @@ class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
                                                             .toGoogleMaps()),
                                                   ),
                                                 );
+                                                FFAppState().defaultAddress =
+                                                    _model.placePickerValue
+                                                        .address;
+                                                safeSetState(() {});
+                                                context.safePop();
                                               },
                                               text: 'Confirm Location',
                                               options: FFButtonOptions(

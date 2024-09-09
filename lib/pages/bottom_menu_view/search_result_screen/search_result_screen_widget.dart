@@ -71,7 +71,7 @@ class _SearchResultScreenWidgetState extends State<SearchResultScreenWidget> {
                     maxWidth: double.infinity,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
@@ -79,7 +79,7 @@ class _SearchResultScreenWidgetState extends State<SearchResultScreenWidget> {
                       topRight: Radius.circular(25.0),
                     ),
                     border: Border.all(
-                      color: const Color(0xFFF1F4F8),
+                      color: FlutterFlowTheme.of(context).borderColor,
                       width: 2.0,
                     ),
                   ),

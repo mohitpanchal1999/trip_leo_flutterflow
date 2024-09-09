@@ -101,18 +101,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'travel_detail_screenCopy',
-          path: '/travelDetailScreenCopy',
-          builder: (context, params) => TravelDetailScreenCopyWidget(
-            backgroundImage: params.getParam(
-              'backgroundImage',
-              ParamType.String,
-            ),
-            destName: params.getParam(
-              'destName',
-              ParamType.String,
-            ),
-          ),
+          name: 'profile_screen',
+          path: '/profileScreen',
+          builder: (context, params) => const ProfileScreenWidget(),
+        ),
+        FFRoute(
+          name: 'itineraryDetailScreen',
+          path: '/itineraryDetailScreen',
+          builder: (context, params) => const ItineraryDetailScreenWidget(),
+        ),
+        FFRoute(
+          name: 'google_place_picker_view',
+          path: '/googlePlacePickerView',
+          builder: (context, params) => const GooglePlacePickerViewWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -18,5 +18,9 @@ export '/pages/bottom_menu_view/google_app_view/google_app_view_widget.dart'
     show GoogleAppViewWidget;
 export '/pages/bottom_menu_view/travel_detail_screen/travel_detail_screen_widget.dart'
     show TravelDetailScreenWidget;
-export '/pages/bottom_menu_view/travel_detail_screen_copy/travel_detail_screen_copy_widget.dart'
-    show TravelDetailScreenCopyWidget;
+export '/pages/profile/profile_screen/profile_screen_widget.dart'
+    show ProfileScreenWidget;
+export '/pages/bottom_menu_view/itinerary_detail_screen/itinerary_detail_screen_widget.dart'
+    show ItineraryDetailScreenWidget;
+export '/pages/bottom_menu_view/google_place_picker_view/google_place_picker_view_widget.dart'
+    show GooglePlacePickerViewWidget;

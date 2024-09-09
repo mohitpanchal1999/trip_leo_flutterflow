@@ -42,9 +42,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFFFBFBFB),
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: const Color(0xFFFBFBFB),
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -143,6 +143,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 context: context,
                                 imageQuality: 100,
                                 allowPhoto: true,
+                                backgroundColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                textColor:
+                                    FlutterFlowTheme.of(context).primaryText,
                                 pickerFontFamily: 'Inter',
                               );
                               if (selectedMedia != null &&
