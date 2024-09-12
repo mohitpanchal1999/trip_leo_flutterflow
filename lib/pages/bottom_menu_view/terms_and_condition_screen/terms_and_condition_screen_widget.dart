@@ -51,7 +51,7 @@ class _TermsAndConditionScreenWidgetState
                   model: _model.commonAppBarFixedTitleModel,
                   updateCallback: () => safeSetState(() {}),
                   child: const CommonAppBarFixedTitleWidget(
-                    appBarTitle: 'Terms & Condition',
+                    appBarTitle: 'Terms & Conditions',
                     isHideProfile: false,
                   ),
                 ),
