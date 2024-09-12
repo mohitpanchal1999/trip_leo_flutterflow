@@ -238,10 +238,10 @@ class _GooglePlacePickerViewWidgetState
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
-                                                fontSize: 0.0,
+                                                fontSize: 0.1,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
-                                                lineHeight: 0.0,
+                                                lineHeight: 0.1,
                                               ),
                                           elevation: 1.0,
                                           borderSide: BorderSide(
