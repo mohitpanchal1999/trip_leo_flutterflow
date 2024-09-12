@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'common_app_bar_fixed_title_model.dart';
 export 'common_app_bar_fixed_title_model.dart';
 
@@ -45,8 +44,6 @@ class _CommonAppBarFixedTitleWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
       child: Container(
@@ -81,9 +78,7 @@ class _CommonAppBarFixedTitleWidgetState
                     maxLines: 2,
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Sora',
-                          fontSize: FFAppState().defaultAddress == ''
-                              ? 18.0
-                              : 14.0,
+                          fontSize: 18.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),

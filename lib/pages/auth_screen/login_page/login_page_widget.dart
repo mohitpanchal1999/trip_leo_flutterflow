@@ -493,6 +493,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                             fontFamily: 'Inter',
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
                                           ),
                                     ),
                                     TextSpan(
