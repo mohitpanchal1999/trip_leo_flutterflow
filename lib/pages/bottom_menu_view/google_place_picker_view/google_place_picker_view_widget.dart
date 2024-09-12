@@ -114,6 +114,8 @@ class _GooglePlacePickerViewWidgetState
                   child: const CommonAppBarWidget(
                     showBackArrow: true,
                     appBarTitle: 'San Diego, California',
+                    isHideProfile: false,
+                    isDisableAction: true,
                   ),
                 ),
               ),

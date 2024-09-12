@@ -24,3 +24,9 @@ export '/pages/bottom_menu_view/itinerary_detail_screen/itinerary_detail_screen_
     show ItineraryDetailScreenWidget;
 export '/pages/bottom_menu_view/google_place_picker_view/google_place_picker_view_widget.dart'
     show GooglePlacePickerViewWidget;
+export '/pages/bottom_menu_view/notification_screen/notification_screen_widget.dart'
+    show NotificationScreenWidget;
+export '/pages/bottom_menu_view/privacy_policy_screen/privacy_policy_screen_widget.dart'
+    show PrivacyPolicyScreenWidget;
+export '/pages/bottom_menu_view/terms_and_condition_screen/terms_and_condition_screen_widget.dart'
+    show TermsAndConditionScreenWidget;

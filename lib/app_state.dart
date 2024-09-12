@@ -37,4 +37,10 @@ class FFAppState extends ChangeNotifier {
   set defaultAddress(String value) {
     _defaultAddress = value;
   }
+
+  bool _isLoggedIn = false;
+  bool get isLoggedIn => _isLoggedIn;
+  set isLoggedIn(bool value) {
+    _isLoggedIn = value;
+  }
 }

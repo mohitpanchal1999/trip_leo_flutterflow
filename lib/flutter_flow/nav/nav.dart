@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
+
 import '/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -134,6 +136,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'google_place_picker_view',
           path: '/googlePlacePickerView',
           builder: (context, params) => const GooglePlacePickerViewWidget(),
+        ),
+        FFRoute(
+          name: 'notification_screen',
+          path: '/notificationScreen',
+          builder: (context, params) => const NotificationScreenWidget(),
+        ),
+        FFRoute(
+          name: 'privacy_policy_screen',
+          path: '/privacyPolicyScreen',
+          builder: (context, params) => const PrivacyPolicyScreenWidget(),
+        ),
+        FFRoute(
+          name: 'termsAndConditionScreen',
+          path: '/termsAndConditionScreen',
+          builder: (context, params) => const TermsAndConditionScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -205,6 +222,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -222,6 +240,7 @@ class FFParameters {
       param,
       type,
       isList,
+      structBuilder: structBuilder,
     );
   }
 }

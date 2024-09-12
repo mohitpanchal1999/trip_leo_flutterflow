@@ -462,11 +462,27 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: 'Terms & Conditions. ',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 14.0,
                                       ),
+                                      mouseCursor: SystemMouseCursors.click,
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () async {
+                                          context.pushNamed(
+                                            'termsAndConditionScreen',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .rightToLeft,
+                                              ),
+                                            },
+                                          );
+                                        },
                                     ),
                                     TextSpan(
                                       text:
@@ -479,11 +495,27 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: 'Privacy Policy.',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 14.0,
                                       ),
+                                      mouseCursor: SystemMouseCursors.click,
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () async {
+                                          context.pushNamed(
+                                            'privacy_policy_screen',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  const TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .rightToLeft,
+                                              ),
+                                            },
+                                          );
+                                        },
                                     )
                                   ],
                                   style: FlutterFlowTheme.of(context)

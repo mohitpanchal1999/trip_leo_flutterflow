@@ -12,12 +12,15 @@ class CommonAppBarWidget extends StatefulWidget {
     bool? showBackArrow,
     required this.appBarTitle,
     bool? isHideProfile,
+    bool? isDisableAction,
   })  : showBackArrow = showBackArrow ?? false,
-        isHideProfile = isHideProfile ?? true;
+        isHideProfile = isHideProfile ?? true,
+        isDisableAction = isDisableAction ?? false;
 
   final bool showBackArrow;
   final String? appBarTitle;
   final bool isHideProfile;
+  final bool isDisableAction;
 
   @override
   State<CommonAppBarWidget> createState() => _CommonAppBarWidgetState();
@@ -85,15 +88,21 @@ class _CommonAppBarWidgetState extends State<CommonAppBarWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
+                    if (widget.isDisableAction) {
+                      return;
+                    }
+
                     context.pushNamed(
                       'google_place_picker_view',
                       extra: <String, dynamic>{
                         kTransitionInfoKey: const TransitionInfo(
                           hasTransition: true,
-                          transitionType: PageTransitionType.leftToRight,
+                          transitionType: PageTransitionType.rightToLeft,
                         ),
                       },
                     );
+
+                    return;
                   },
                   child: Text(
                     valueOrDefault<String>(
@@ -123,8 +132,16 @@ class _CommonAppBarWidgetState extends State<CommonAppBarWidget> {
                     color: FlutterFlowTheme.of(context).primaryText,
                     size: 24.0,
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
+                  onPressed: () async {
+                    context.pushNamed(
+                      'notification_screen',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: const TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.rightToLeft,
+                        ),
+                      },
+                    );
                   },
                 ),
               ),
@@ -135,7 +152,15 @@ class _CommonAppBarWidgetState extends State<CommonAppBarWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('profile_screen');
+                    context.pushNamed(
+                      'profile_screen',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: const TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.rightToLeft,
+                        ),
+                      },
+                    );
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(24.0),

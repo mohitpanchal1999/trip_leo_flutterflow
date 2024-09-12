@@ -105,8 +105,8 @@ class _ProfileScreenWidgetState extends State<ProfileScreenWidget>
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
+                                    width: 120.0,
+                                    height: 120.0,
                                     clipBehavior: Clip.antiAlias,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
@@ -127,7 +127,7 @@ class _ProfileScreenWidgetState extends State<ProfileScreenWidget>
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    75.0, 75.0, 0.0, 0.0),
+                                    90.0, 95.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,

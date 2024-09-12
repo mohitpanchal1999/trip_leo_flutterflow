@@ -1,6 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/component/top_itinerary_row_widget/top_itinerary_row_widget_widget.dart';
+import '/pages/component/top_itinerary_row_widget_copy/top_itinerary_row_widget_copy_widget.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -71,15 +71,15 @@ class _ItineraryCardViewWidgetState extends State<ItineraryCardViewWidget> {
                 ),
               ),
               wrapWithModel(
-                model: _model.topItineraryRowWidgetModel,
+                model: _model.topItineraryRowWidgetCopyModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const TopItineraryRowWidgetWidget(),
+                child: const TopItineraryRowWidgetCopyWidget(),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    color: FlutterFlowTheme.of(context).itenaryCardColor,
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Padding(
@@ -181,7 +181,7 @@ class _ItineraryCardViewWidgetState extends State<ItineraryCardViewWidget> {
                                     height: 40.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                          .itenaryCardColor,
                                       borderRadius: const BorderRadius.only(
                                         bottomLeft: Radius.circular(0.0),
                                         bottomRight: Radius.circular(0.0),

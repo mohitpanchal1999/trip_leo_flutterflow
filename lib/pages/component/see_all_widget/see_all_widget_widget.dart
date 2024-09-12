@@ -53,14 +53,37 @@ class _SeeAllWidgetWidgetState extends State<SeeAllWidgetWidget> {
                 fontWeight: FontWeight.w600,
               ),
         ),
-        Text(
-          'View All',
-          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Inter',
-                color: FlutterFlowTheme.of(context).primary,
-                letterSpacing: 0.0,
-                fontWeight: FontWeight.w500,
-              ),
+        InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          onTap: () async {
+            context.pushNamed(
+              'searchResultScreen',
+              queryParameters: {
+                'appBarTitle': serializeParam(
+                  '',
+                  ParamType.String,
+                ),
+              }.withoutNulls,
+              extra: <String, dynamic>{
+                kTransitionInfoKey: const TransitionInfo(
+                  hasTransition: true,
+                  transitionType: PageTransitionType.fade,
+                ),
+              },
+            );
+          },
+          child: Text(
+            'View All',
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Inter',
+                  color: FlutterFlowTheme.of(context).primary,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
+                ),
+          ),
         ),
       ],
     );

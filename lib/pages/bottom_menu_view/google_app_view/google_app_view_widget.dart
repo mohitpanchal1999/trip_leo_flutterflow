@@ -104,6 +104,8 @@ class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
                   child: const CommonAppBarWidget(
                     showBackArrow: true,
                     appBarTitle: 'San Diego, California',
+                    isHideProfile: false,
+                    isDisableAction: true,
                   ),
                 ),
               ),
