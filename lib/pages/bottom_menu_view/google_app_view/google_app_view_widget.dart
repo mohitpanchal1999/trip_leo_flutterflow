@@ -212,14 +212,14 @@ class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
                                         icon: FaIcon(
                                           FontAwesomeIcons.search,
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .primaryBackground,
                                           size: 15.0,
                                         ),
                                         buttonOptions: FFButtonOptions(
                                           width: 70.0,
                                           height: 40.0,
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .primary,
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall
