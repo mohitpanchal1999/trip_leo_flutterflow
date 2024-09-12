@@ -526,6 +526,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
+                                        lineHeight: 1.0,
                                       ),
                                 ),
                                 textAlign: TextAlign.center,

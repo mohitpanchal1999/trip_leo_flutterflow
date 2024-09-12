@@ -83,8 +83,8 @@ class _NotificationScreenWidgetState extends State<NotificationScreenWidget> {
                       height: double.infinity,
                       decoration: const BoxDecoration(),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 20.0, 0.0, 10.0),
                         child: ListView(
                           padding: EdgeInsets.zero,
                           shrinkWrap: true,
