@@ -35,7 +35,10 @@ class _NotificationScreenWidgetState extends State<NotificationScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).appBgColor,
@@ -83,8 +86,8 @@ class _NotificationScreenWidgetState extends State<NotificationScreenWidget> {
                       height: double.infinity,
                       decoration: const BoxDecoration(),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 20.0, 0.0, 10.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: ListView(
                           padding: EdgeInsets.zero,
                           shrinkWrap: true,

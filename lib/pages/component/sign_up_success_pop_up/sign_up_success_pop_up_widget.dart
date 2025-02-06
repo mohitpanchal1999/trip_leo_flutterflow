@@ -81,7 +81,7 @@ class _SignUpSuccessPopUpWidgetState extends State<SignUpSuccessPopUpWidget> {
                       Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Lottie.asset(
-                          'assets/lottie_animations/Animation_-_1724745643162_(1).json',
+                          'assets/jsons/Animation_-_1724745643162_(1).json',
                           width: 191.0,
                           height: 165.0,
                           fit: BoxFit.cover,

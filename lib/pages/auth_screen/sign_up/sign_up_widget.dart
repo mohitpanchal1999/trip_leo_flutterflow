@@ -74,7 +74,10 @@ class _SignUpWidgetState extends State<SignUpWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: const Color(0xFFFBFBFB),
@@ -391,9 +394,13 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                     Directionality.of(context)),
                                             child: WebViewAware(
                                               child: GestureDetector(
-                                                onTap: () =>
-                                                    FocusScope.of(dialogContext)
-                                                        .unfocus(),
+                                                onTap: () {
+                                                  FocusScope.of(dialogContext)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
                                                 child:
                                                     const SignUpSuccessPopUpWidget(),
                                               ),

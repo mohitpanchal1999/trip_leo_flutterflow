@@ -66,7 +66,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: const Color(0xFFFBFBFB),
@@ -526,7 +529,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
-                                        lineHeight: 1.4,
+                                        lineHeight: 1.0,
                                       ),
                                 ),
                                 textAlign: TextAlign.center,

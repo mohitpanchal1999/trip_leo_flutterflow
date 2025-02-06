@@ -86,7 +86,10 @@ class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
     }
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         resizeToAvoidBottomInset: false,
@@ -207,32 +210,35 @@ class _GoogleAppViewWidgetState extends State<GoogleAppViewWidget>
                                         onSelect: (place) async {
                                           safeSetState(() =>
                                               _model.placePickerValue = place);
+                                          (await _model
+                                                  .googleMapsController.future)
+                                              .animateCamera(
+                                                  CameraUpdate.newLatLng(place
+                                                      .latLng
+                                                      .toGoogleMaps()));
                                         },
                                         defaultText: '',
                                         icon: FaIcon(
                                           FontAwesomeIcons.search,
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .primary,
                                           size: 15.0,
                                         ),
                                         buttonOptions: FFButtonOptions(
                                           width: 70.0,
                                           height: 40.0,
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .info,
-                                                fontSize: 0.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                                lineHeight: 0.0,
-                                              ),
+                                              .primaryBackground,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Inter',
+                                                    color: const Color(0x00FFFFFF),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                    lineHeight: 0.0,
+                                                  ),
                                           elevation: 1.0,
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)

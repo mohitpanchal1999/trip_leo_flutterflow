@@ -1,4 +1,4 @@
-package com.mycompany.tripleo
+package com.dexbytes.tripleoapp
 
 import io.flutter.embedding.android.FlutterActivity
 
